@@ -1,0 +1,18 @@
+.divScroll {
+    overflow:scroll;
+    height:100px;
+    width:50vw;
+    margin:auto;
+}
+h1,h2{
+    width:55%;
+    display: block;
+    position: relative;
+    float: none;
+    margin: 0 auto;
+}
+.artistPick{
+    margin: auto;
+    margin-top:10vw;
+    font-size: 5vw;
+}

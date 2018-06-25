@@ -1,0 +1,13 @@
+<h1>Best scores</h1>
+<div class="divScroll">
+  <p *ngFor="let score of scores" >
+    {{score.username}}
+    {{score.points}}
+  </p>   
+</div>
+<h2 class="artistPick">Pick your favorite artist</h2>
+<div class="divScroll">
+  <p *ngFor="let artist of artists25" >
+    {{artist}}
+  </p>
+</div>

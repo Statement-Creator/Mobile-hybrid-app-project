@@ -1,0 +1,27 @@
+{
+  "name": "score",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "points": {
+      "type": "number",
+      "required": true
+    },
+    "username": {
+      "type": "string",
+      "required": true
+    }
+    ,
+    "song": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}
