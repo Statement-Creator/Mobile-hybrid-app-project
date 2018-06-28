@@ -4,6 +4,12 @@
     width:50vw;
     margin:auto;
 }
+.divScroll1 {
+    overflow:scroll;
+    height:300px;
+    width:50vw;
+    margin:auto;
+}
 h1,h2{
     width:55%;
     display: block;
@@ -15,4 +21,7 @@ h1,h2{
     margin: auto;
     margin-top:10vw;
     font-size: 5vw;
+}
+.artistPara{
+    text-align: center;
 }

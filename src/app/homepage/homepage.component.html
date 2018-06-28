@@ -1,13 +1,50 @@
-<h1>Best scores</h1>
-<div class="divScroll">
+
+
+<h1 *ngIf="toggleVar">Best scores</h1>
+<div class="divScroll" *ngIf="toggleVar">
   <p *ngFor="let score of scores" >
     {{score.username}}
     {{score.points}}
   </p>   
 </div>
-<h2 class="artistPick">Pick your favorite artist</h2>
-<div class="divScroll">
-  <p *ngFor="let artist of artists25" >
-    {{artist}}
-  </p>
+
+
+<h2 class="artistPick" *ngIf="toggleVar">Pick your favorite artist</h2>
+<div *ngIf="toggleVar" class="divScroll1">
+    <div (click)="artistGotChosen(name.innerHTML)" class="artistPara" *ngFor="let artist of artists25" >
+      <img src="{{artist.image[2]['#text']}}" >
+      <p #name >{{artist.name}}</p>
+    </div>
+</div>
+
+
+<div *ngIf="!toggleVar && toggleVar1" class="difficultySettings">
+  <h1>Choose the difficulty</h1>
+  <p (click)="chosenDiff(easy.innerHTML)" #easy >Easy</p>
+  <br>
+  <p (click)="chosenDiff(medium.innerHTML)" #medium >Medium</p>
+  <br>
+  <p (click)="chosenDiff(hard.innerHTML)" #hard >Hard</p>
+  <div>
+    
+  </div>
+</div>
+
+<div *ngIf="!toggleVar1 && toggleVar2">
+  <h1>Choose a song</h1>
+  <div *ngFor="let song of songNames" class="songList">
+    <p #songChosenHTML (click)="songChosen(songChosenHTML.innerHTML)" >{{song.name}}</p>
+  </div>
+</div>
+
+<div *ngIf="!toggleVar2" >
+  <h1>{{songTitle}}</h1>
+  <button (click)="lyricsSeperator(); previousVerse()" > Start Game </button>
+  <div *ngIf="toggleVar3" >
+    <p>Previous Verse: {{previousLyric}}</p>
+    <button (click)="incrementI(); lyricsSeperator(); previousVerse()" > {{correctAnswer}} </button>
+    <button (click)="incrementI(); lyricsSeperator(); previousVerse()"> {{wrongAnswer1}} </button>
+    <button (click)="incrementI(); lyricsSeperator(); previousVerse()"> {{wrongAnswer2}} </button>
+    <button (click)="incrementI(); lyricsSeperator(); previousVerse()"> {{wrongAnswer3}} </button>
+  </div>
 </div>
